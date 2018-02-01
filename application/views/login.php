@@ -4,7 +4,7 @@
                 
                 <div class="login col-md-12">
                 <h1>Login</h1>
-                    <form>
+                    <?php echo form_open('users/login'); ?>
                     <div class="form-group">
                         <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1"><i class='fa fa-envelope'></i></span>

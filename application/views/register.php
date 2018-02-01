@@ -4,26 +4,29 @@
                 
                 <div class="register col-md-12">
                 <h1>Register</h1>
-                    <form>
+                    <?php echo form_open_multipart('users/add_user'); ?>
+                    <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
                         <div class="form-group row">
                             <div class="col-md-6">
+                                                                
                                 <label for="firstName">First Name</label>
-                                <input class="form-control" id="firstName" name="firstName" type="text" aria-describedby="basic-addon1"  placeholder="First Name"/>
+                                
+                                <input class="form-control" id="firstName" name="firstName" type="text" aria-describedby="basic-addon1"  placeholder="First Name" value="<?php echo set_value('firstName'); ?>"/>
                             </div>
                             <div class="col-md-6">
                             <label for="lastName">Last Name</label>
-                                <input class="form-control" id="lastName" name="lastName" type="text" aria-describedby="basic-addon1"  placeholder="Last Name"/>
+                                <input class="form-control" id="lastName" name="lastName" type="text" aria-describedby="basic-addon1"  placeholder="Last Name" value="<?php echo set_value('lastName'); ?>"/>
                                 
                             </div>                            
                         </div>                    
                         <div class="form-group row">
                             <div class="col-md-6">
                             <label for="login">Login Name</label>
-                                <input class="form-control" id="login" name="login" type="text" aria-describedby="basic-addon1"  placeholder="Username"/>
+                                <input class="form-control" id="login" name="login" type="text" aria-describedby="basic-addon1"  placeholder="Username" value="<?php echo set_value('login'); ?>"/>
                             </div>
                             <div class="col-md-6">
                             <label for="email">Email Address</label>
-                                <input class="form-control" id="email" name="email" type="text" aria-describedby="basic-addon1"  placeholder="Email Address"/>
+                                <input class="form-control" id="email" name="email" type="text" aria-describedby="basic-addon1"  placeholder="Email Address" value="<?php echo set_value('email'); ?>"/>
                             </div>                            
                         </div>                    
                         <div class="form-group row">
@@ -37,11 +40,8 @@
                             </div>                            
                         </div>                    
                         <div class="form-group row">
-                            <div class="col-md-6">
-                            <label for="pic">Profile Picture</label>
-                                <input class="form-control" id="pic" name="username" type="file" aria-describedby="basic-addon1"  placeholder="Profile Picture"/>
-                            </div>
-                            <div class="col-md-6">
+                            
+                            <div class="col-md-12">
                                 <div class="form-check">                    
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name='remember'>                            
                                     <small>Accept Terms and Conditions</small>    
@@ -55,7 +55,7 @@
                         <div class="form-group row">
                             <div class="col-md-12">
                             <label for="bio">Bio</label>
-                                <textarea class="form-control" id="bio" name="username" type="text" aria-describedby="basic-addon1"  placeholder="Write Some information about you" cols="20" rows="5"></textarea>
+                                <textarea class="form-control" id="bio" name="bio" type="text" aria-describedby="basic-addon1"  placeholder="Write Some information about you" cols="20" rows="5" value="<?php echo set_value('bio'); ?>"></textarea>
                             </div>
                         </div>
                         <div class="form-group row">

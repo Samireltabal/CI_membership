@@ -1,7 +1,3 @@
 $(document).ready(function() {
-	
-	setTimeout(function(){
-		$('body').addClass('loaded');
-	}, 30);
-	
+	$('body').addClass('loaded');	
 });

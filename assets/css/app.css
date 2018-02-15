@@ -1,7 +1,9 @@
-body { background: rgb(246, 249, 252); font-family: 'Oswald', sans-serif;}
+body { 
+    background:  rgb(246, 249, 252) url(../imgs/bg.jpg) no-repeat center top ; font-family: 'Oswald', sans-serif; background-size:100%; 
+}
 * , h1 , h2 , h3, h4, h5 ,h6 , p , a , input , button { font-family: 'Oswald', sans-serif;
 }
-
+.no-padding { padding-right: 0; padding-left:0 ;}
 
 #loader-wrapper {
     position: fixed;
@@ -157,7 +159,7 @@ body { background: rgb(246, 249, 252); font-family: 'Oswald', sans-serif;}
         margin-top:1em;
         padding:1em 2em;
         border-radius: 5px;
-        background: rgba(41, 128, 185,0.2) 
+        background: rgba(41, 128, 185,0.9) 
     }
     .register { 
         margin-top:1em;
@@ -176,3 +178,9 @@ body { background: rgb(246, 249, 252); font-family: 'Oswald', sans-serif;}
     .input-group-prepend > .input-group-text { border-radius: .25rem 0rem 0rem 0.25rem; }
     .input-group-prepend > .form-control { border-radius:  0rem .25rem .25rem 0rem ; }
     .form-check > small { color:#ddd; font-family: 'Oswald', sans-serif; font-weight: normal; font-size:0.8em; }
+    .btn-outline-secondary { border-color:#fff ; color:#fff;}
+    .btn-outline-secondary:hover { border-color:#fff; }
+
+    .page { margin-top: 1em; background:rgba(52, 73, 94,1.0) ; border:1px solid rgba(52, 73, 94,1.0); border-radius: 4px; padding:1em; color:rgb(252, 77, 57)}
+     
+    code { padding : 0.5em; background : #eee; margin: 2px; border-radius: 0.5em;  }

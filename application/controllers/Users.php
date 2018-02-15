@@ -8,6 +8,7 @@ class Users extends CI_Controller {
   }
     public function index(){
       $this->load->view('main/header');
+      $this->load->view('main/nav');
       $this->load->view('login');
       $this->load->view('main/footer');
     }
@@ -16,17 +17,39 @@ class Users extends CI_Controller {
       $this->load->view('register');
       $this->load->view('main/footer');
     }
-    function test() {
-      $user_name = "xsolyx";
-      $password = "0109239237";
+    /* function test() {
+      $user_name = "=========";
+      $password = "---------";
       echo $this->users->verify_login($user_name,$password);
-    }
+    } */
     /* login controller */
     function login() {
       $user_name = $this->input->post('username');
       $password = $this->input->post('password');
       $remember = $this->input->post('remember');
-      echo $this->users->verify_login($user_name,$password);
+      $data = $this->users->verify_login($user_name,$password);
+      if ($data == !false) {
+        foreach ($data->result_array() as $info){
+          $session_info = array(
+            'id' => $info['id'],
+            'isLogged' => 1,
+            'login' => $info['login'],
+            'first_name' => $info['first_name'],
+            'last_name' => $info['last_name'],
+            'email' => $info['email']
+          );
+          $this->session->set_userdata($session_info);
+          redirect('restricted',301);
+      }
+      }else{
+        $this->session->set_flashdata('login_error', 'Username or password is incorrect');
+        redirect('users',301);
+      }
+    }
+    function logout() {
+      $this->session->unset_userdata('isLogged');
+			session_destroy();
+			redirect('/','location',301);
     }
     /* End Of Login Controller */
     function add_user() {
@@ -51,11 +74,11 @@ class Users extends CI_Controller {
       $last_name = $this->input->post('lastName');
       $login = $this->input->post('login');
       $email = $this->input->post('email');
-      $pic_url = $inserted_pic;
+      $pic_url = null;
       $password_plain = $this->input->post('password');    
       $passwordVerify = $this->input->post('passwordVerify');
       $bio = $this->input->post('bio');
-      $role = 1;
+      $role = 2;
       $password = password_hash($password_plain,PASSWORD_DEFAULT);
 
       
@@ -81,7 +104,7 @@ class Users extends CI_Controller {
     } /* end form validation */
     }
   
-  function upload_attachment() {
+  /* function upload_attachment() {
     $config['upload_path']          = './uploads/';
         $config['allowed_types']        = 'gif|jpg|png';
         $config['max_size']             = 1024;
@@ -139,6 +162,6 @@ class Users extends CI_Controller {
       }
         }else{
         }
-  }
+  } */
 }
 ?>

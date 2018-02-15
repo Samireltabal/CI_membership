@@ -20,20 +20,28 @@
         $this->db->limit(1);
         $query = $this->db->get('sm_users');
         if ( $query->num_rows() !== 1 ){
-            return "No Such User" ;
-        }else{
-
-        
-        foreach ( $query->result_array() as $return ){
-            $hash = $return['password'];
-            if ( password_verify($pass,$hash) == 1 ) {
-                return "Good Login";
-            }else{
-                return "Bad Password";
+            return False;
+        }else{        
+            foreach ( $query->result_array() as $return ){
+                $hash = $return['password'];
+                if ( password_verify($pass,$hash) == 1 ) {
+                    return $query;
+                }else{
+                    return False;
+                }
             }
         }
     }
-}
+    function get_role($id) {
+        $this->db->select('role');
+        $this->db->where('id',$id);
+        $this->db->limit(1);
+        $this->db->from('sm_users');
+        $result = $this->db->get();
+        foreach ($result->result_array() as $role) {
+            return $role['role'];
+        }
+    }
     
  }
  ?>

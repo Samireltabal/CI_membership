@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2018 at 02:41 PM
+-- Generation Time: Feb 15, 2018 at 12:00 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -82,10 +82,8 @@ CREATE TABLE `sm_users` (
 --
 
 INSERT INTO `sm_users` (`id`, `login`, `first_name`, `last_name`, `email`, `password`, `pic`, `bio`, `status`, `role`, `registered`) VALUES
-(1, 'soly', 'Samir', 'eltabbal', 'soly.0@live.com', '$2y$10$tCXxEOU.QspDRb8vA.IqLOj.nMp4EpzZLQFc7OD65rH1ghFWIJs.u', NULL, 'Hello World', 1, 1, '2018-02-01 14:15:30'),
-(2, 'xsolyx', 'Samir', 'eltabal', 'samir.m.eltabal@gmail.com', '$2y$10$i5MLeTF71T2fTFZKBcSKrOhlW9drWRt3GbHXXYa2xFrqzqKc3zzT.', NULL, 'Next User', 1, 1, '2018-02-01 14:18:34'),
-(3, 'haiky', 'haidy', 'karam', 'haidy.karam@hotmail.com', '$2y$10$I3Vmkd4v3cpwyd8ne5bbd.P9f2S31ZnJKKfoJdlOZ3vzKsuo2KN6a', NULL, 'fake account', 1, 1, '2018-02-01 14:43:28'),
-(4, 'haiky2', 'haidy', 'karam', 'haidy.karam2@hotmail.com', '$2y$10$ph0Foc08QVM.MOu7i4Bqt.FowoyK48p4.wf5KvTW17LaosXRskQJq', NULL, '2', 1, 1, '2018-02-01 14:45:15');
+(1, 'administrator', 'admin', 'admin', 'admin@example.com', '$2y$10$Ilxe4qfBKSq8Vcb4e.V6YuqbEk2Px9CTa21J7ZqGxSSu0NTzvf0jC', NULL, 'Administrator Account', 1, 1, '2018-02-14 14:45:52'),
+(2, 'member', 'Member', 'Member', 'member@example.com', '$2y$10$0tUVmvKg8l1uBYsn1iRJ8OWm6OMlSvxps62zWcm/PRCfV0nHurPJK', NULL, 'Member Account', 1, 2, '2018-02-14 14:47:13');
 
 --
 -- Indexes for dumped tables
@@ -133,7 +131,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sm_users`
 --
 ALTER TABLE `sm_users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --

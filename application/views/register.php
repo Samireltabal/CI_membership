@@ -46,10 +46,7 @@
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name='remember'>                            
                                     <small>Accept Terms and Conditions</small>    
                                 </div>                            
-                                <div class="form-check">                    
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name='remember'>                            
-                                    <small>Accept Terms and Conditions</small>    
-                                </div>                            
+                                                         
                             </div>                            
                         </div>                    
                         <div class="form-group row">
@@ -60,7 +57,7 @@
                         </div>
                         <div class="form-group row">
                         <div class="col-md-6">
-                        <button type="submit" class="btn btn-outline-secondary btn-block">Login</button>
+                        <button type="submit" class="btn btn-outline-secondary btn-block">Register</button>
                         </div>
                         <div class="col-md-6">
                         <button type="reset" class="btn btn-outline-secondary btn-block">Clear</button>

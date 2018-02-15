@@ -4,6 +4,11 @@
                 
                 <div class="login col-md-12">
                 <h1>Login</h1>
+                <?php if ($this->session->flashdata('login_error') !== null) { ?>
+                    <div class="alert alert-danger" role="alert">
+                <?php echo  $this->session->flashdata('login_error') ?>
+                </div>
+                <?php } ?>
                     <?php echo form_open('users/login'); ?>
                     <div class="form-group">
                         <div class="input-group-prepend">
@@ -19,11 +24,12 @@
                         </div>    
                     
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name='remember'>
-                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                    <div class="row">
+                    <div class="col-md-6"><button type="submit" class="btn btn-outline-secondary btn-block">Login</button></div>
+                    <div class="col-md-6"><?php echo anchor('users/register','Register',array('class'=>'btn btn-outline-secondary btn-block')); ?></div>
+                    
+                    
                     </div>
-                    <button type="submit" class="btn btn-outline-secondary btn-block">Login</button>
                     </form>
                 </div> <!-- login-form -->
             </div> <!-- form col-md-4 -->    
